@@ -15,7 +15,7 @@ See also `examples_vcard.php` for more examples.
 2. Instantiate a vCard
 3. Set properties
 
-** Example **
+#### Example ####
 
     require_once('VCard.php');
     
@@ -35,10 +35,10 @@ See also `examples_vcard.php` for more examples.
  
 ### How to generate a vCard? ###
 1. Include `VCard_Generator.php` to your script
-2. Call `VCard_Generator::generate($vCard,$version);`, where *$vCard* is the vCard object and *$version* the vCard version (2.1, 3.0 or 4.0)
+2. Call `VCard_Generator::generate($vCard,$version);`, where *$vCard* is the vCard object and *$version* the vCard version
 3. To save the vCard directly as .vcf-file just add the filename as last parameter or call `VCard_generator::download($vCard,$version,$filename);`
 
-** Example **
+#### Example ####
     
     require_once('VCard_Generator.php');
     
@@ -54,12 +54,14 @@ See also `examples_vcard.php` for more examples.
 3. Call `$parser->parse();` which returns an array of vCard objects
 4. Get the first vCard via index 0 (zero)
 
-** Example **
+#### Example ####
 
     require_once('VCard_Parser.php');
     
     ## a vCard as string
-    $vCardString = "BEGIN:VCARD\r\nVERSION:4.0\r\nFN:John Doe\r\nN:Doe;John\r\nADR:;;Examplestreet 123;City;Somestate;4567;Country\r\nTEL;TYPE=HOME:1-234-567890\r\nEMAIL:john.doe@example.org\r\nEND:VCARD\r\n";
+    $vCardString = "BEGIN:VCARD\r\nVERSION:4.0\r\nFN:John Doe\r\nN:Doe;John\r\n
+                    ADR:;;Examplestreet 123;City;Somestate;4567;Country\r\nTEL;TYPE=HOME:1-234-567890\r\n
+                    EMAIL:john.doe@example.org\r\nEND:VCARD\r\n";
     
     ## Parse a vCard
     $parser = new VCard_Parser($vCardString);
